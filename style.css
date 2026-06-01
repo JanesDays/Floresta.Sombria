@@ -1,8 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg: #000;
+    --text: #eee;
+    --accent: #f1b73a;
+    --overlay: #0004;
+}
+
 body{
     font-family: Poppins;
-    background-color: #000;
-    color: #eee;
+    background-color: var(--bg);
+    color: var(--text);
     margin: 0;
     font-size: 12px;
 }
@@ -54,7 +62,7 @@ header a{
     text-shadow: 0 5px 10px #0004;
 }
 
-.carousel .list .item .author{
+.carousel .list .item .autor{
     font-weight: bold;
     letter-spacing: 10px;
 }
@@ -62,13 +70,13 @@ header a{
 {
     font-weight: bold;
     font-size: 5em;
-    list-style: 1.3em;   
+    line-height: 1.3em;
     color: #ffffff;
 }
 
 .carousel .list .item .topic{
     font-weight: bold;
-    color: #f1b73a;
+    color: var(--accent);
     font-size: 40px;
 }
 
@@ -90,6 +98,13 @@ header a{
     z-index: 100;
     display: flex;
     gap: 20px;
+    transition: transform 0.5s ease;
+}
+.carousel.next .thumbnail{
+    transform: translateX(150px);
+}
+.carousel.prev .thumbnail{
+    transform: translateX(-150px);
 }
 .thumbnail .item{
     width: 150px;
@@ -145,7 +160,7 @@ header a{
 .carousel .list .item:nth-child(1){
     z-index: 1;
 }
-.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .autor,
 .carousel .list .item:nth-child(1) .title,
 .carousel .list .item:nth-child(1) .topic,
 .carousel .list .item:nth-child(1) .des{
@@ -167,7 +182,7 @@ header a{
 }
 
 .carousel .list .item:nth-child(1) .content .topic{
-    animation-delay: 1,4s!important;
+    animation-delay: 1.4s!important;
 }
 .carousel .list .item:nth-child(1) .content .des{
     animation-delay: 1.6s!important;
@@ -193,44 +208,8 @@ header a{
     }
 }
 
-.carousel.next .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    animation: showThumbnail .5s linear 1 forwards;
-}
-.carousel.prev .list .item igm{
+.carousel.prev .list .item img{
     z-index: 100;
-}
-@keyframes showThumbnail{
-    to{
-        width: 0;
-        opacity: 0;
-    }
-}
-.carousel.next .thumbnail{
-    animation: effectNext .5s linear 1 forwards;
-}
-
-@keyframes transformThumnail{
-    to{
-        transform: translateX(150px);
-    }
-}
-.carousel .time{
-    position: absolute;
-    z-index: 1000;
-    width: 0%;
-    height: 3px;
-    background-color: #f1683a;
-    left: 0;
-    top: 0;
-}
-.carousel.next .time,
-.carousel.prev .time{
-    animation: runningTime 3s linear 1 forwards;
-}
-@keyframes runningTime{
-    from{ width: 100%}
-    to{width: 0}
 }
 
 /* effect prev click */
@@ -253,17 +232,12 @@ header a{
         bottom: 50px;
     }
 }
-.carousel.prev .thumbnail .item:nth-child(1){
-    overflow: hidden;
-    opacity: 0;
-    animation: showthumnail 0.5s linear 1 forwards;
-}
 
 .carousel.next .arrows button,
 .carousel.prev .arrows button{
     pointer-events: none;
 }
-.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .autor,
 .carousel.prev .list .item:nth-child(2) .title,
 .carousel.prev .list .item:nth-child(2) .topic,
 .carousel.prev .list .item:nth-child(2) .des
@@ -276,17 +250,23 @@ header a{
         filter: blur(20px);
         opacity: 0;
     }
-
+}
 
 /* time */
-
-}
 @media screen and (max-width: 678px){
    .carousel .list .item .content{
     padding-right: 0;
    }
    .carousel .list .item .content .title{
     font-size: 30px;
+   }
+   .thumbnail .item{
+    width: 100px;
+    height: 150px;
+   }
+   .thumbnail{
+    gap: 10px;
+    bottom: 30px;
    }
 }
     
