@@ -20,12 +20,12 @@ Esse projeto começou como um experimento de carrossel, e ao longo do caminho fu
 - **Transições mais suaves** — tanto indo pra frente quanto voltando, os slides e thumbnails se movem juntos, sem aquele pulo estranho.
 - **Código mais limpo** — variáveis sem uso foram embora, animation keys que não serviam pra nada foram deletadas, e o JavaScript ficou mais direto.
 - **Responsividade** — as thumbnails agora se adaptam em telas menores (celular), sem quebrar o layout.
-- **Acessibilidade** — todas as imagens ganharam `alt` descritivo, e a indentação do HTML foi organizada (tava um caos).
+- **Acessibilidade** — todas as imagens ganharam `alt` descritivo, e a indentação do HTML foi organizada.
 - **Carregamento** — as primeiras imagens são pré-carregadas pra não ficar aquele flash branco na primeira vez.
 
 ### O que saiu
 
-- Auto-play (agora você controla o ritmo)
+- Auto-play
 - Barra de progresso laranja
 - Código morto (keyframes e variáveis que não eram usadas)
 - Thumbnail duplicada e descriptions vazias no HTML
